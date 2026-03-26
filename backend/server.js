@@ -1,5 +1,5 @@
 require("dotenv").config();
-
+const taskRoutes = require("./routes/taskRoutes");
 
 const express = require("express");
 const mongoose = require("mongoose");
@@ -17,6 +17,7 @@ console.log("Mounting routes...");
 
 // ROUTES
 app.use("/api/auth", require("./routes/authRoutes"));
+app.use("/api/tasks", taskRoutes);
 console.log("Auth routes mounted");
 
 app.get("/", (req, res) => {
